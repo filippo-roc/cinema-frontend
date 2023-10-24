@@ -6,7 +6,7 @@
 }
 .film{
     width: 25rem;
-    height: 30rem;
+    height: 25rem;
     margin-top: 2rem;
     border-radius: 8px;
     cursor: pointer;
@@ -22,6 +22,7 @@
 }
 .film__img{
     width: 100%;
+    border-radius: 8px;
 }
 .film__description{
     text-align: center;
@@ -31,5 +32,5 @@
     align-self: center;
     margin-right: 8px;
     margin-bottom: 30px;
-    margin-left: 40px;
+    margin-top: 30px;
 }

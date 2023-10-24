@@ -6,6 +6,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { DetailsComponent } from './details/details.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { AddFilmComponent } from './add-film/add-film.component';
+import { ReservationComponent } from './reservation/reservation.component';
+import { DettaglioFilmComponent } from './dettaglio-film/dettaglio-film.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,7 +16,9 @@ const routes: Routes = [
   { path: 'signin', component: SignInComponent },
   { path: 'details', component: DetailsComponent },
   { path: 'catalogue', component: CatalogueComponent },
-  {path: "add-film", component : AddFilmComponent}
+  {path: "add-film", component : AddFilmComponent},
+  { path: 'reservation', component: ReservationComponent },
+  {path: "dettaglio-film", component : DettaglioFilmComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,31 @@
+<section  class="section" id="add-film">
+    <h1 class="accedi-title">Prenota</h1>
+
+
+            <form class="form ">
+                
+                    <label class="form__label add-form__label" for="film">Film</label>
+                    <input class="form__input add-form__input" name="film" type="text" value="" disabled />
+                
+               
+                <label class="form__label add-form__label" for="biglietti">Biglietti</label>
+                <input class="form__input add-form__input"[(ngModel)]="title" name="biglietti" type="number" value="" />
+               
+                <label class="form__label add-form__label" for="giorno">Giorno e ora della proiezione</label>
+                <input class="form__input add-form__input" name="giorno" type="datetime-local" value="" />
+                
+                <div>
+                    <button  type="submit" class="add-form__btn btn ">Prenota</button>
+                <a routerLink="/catalogue"><button  class="add-form__btn btn">Torna indietro</button></a>
+                
+                </div>
+            </form >
+            <!-- Fine form -->
+    
+  
+  
+        <p >Prenota il tuo biglietto. Alla decima prenotazione, il successivo verrà offerto da noi</p>
+    
+</section>
+
+
