@@ -13,6 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AddFilmComponent } from './add-film/add-film.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { InputNameComponent } from './input-name/input-name.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     HomeComponent,
     AddFilmComponent,
+    InputNameComponent,
   ],
   imports: [
     BrowserModule,
