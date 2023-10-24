@@ -1,0 +1,12 @@
+<section  class="section" id="add-film">
+    <h1 class="accedi-title">Inserisci un nuovo film da aggiungere al catalogo</h1>
+    <form action="" class="form">
+      <label class="form__label add-form__label" for="nome">Nome</label>
+      <input class="form__input add-form__input"[(ngModel)]="title" name="nome" type="text" value="" />
+
+      <label class="form__label add-form__label" for="descrizione">Descrizione</label>
+      <input  class="form__input add-form__input"[(ngModel)]="description"  name="descrizione" type="text" value=""/>
+      <button (click)="addFilmHandler()" class="add-form__btn btn">AGGIUNGI</button>
+    </form>
+
+</section>

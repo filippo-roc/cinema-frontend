@@ -1,0 +1,17 @@
+<header class="header">
+<nav class="nav">
+    <div>
+      <p class="special-text logo">CINEMA</p>
+    </div>
+    <ul class="menu">
+      <li class="menu__item"><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li class="menu__item"><a routerLink="/catalogue" routerLinkActive="active">Catalogo</a></li>
+      <li *ngIf="!isLoggedIn" class="menu__item"><a routerLink="/login" routerLinkActive="active">Accedi</a></li>
+      <li *ngIf="!isLoggedIn" class="menu__item"><a routerLink="/signin" routerLinkActive="active">Iscriviti</a></li>
+      <li *ngIf="isLoggedIn" class="menu__item"><a routerLink="/add-film" routerLinkActive="active">Aggiungi</a></li>
+      <li *ngIf="isLoggedIn" class="menu__item"><a routerLink="/logout" routerLinkActive="active">Esci</a></li>
+   </ul>
+  </nav>
+</header>
+<router-outlet>
+</router-outlet>

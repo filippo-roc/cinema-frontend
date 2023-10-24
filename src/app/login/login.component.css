@@ -1,0 +1,27 @@
+#accedi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.accedi-title{
+    font-size: 48px;
+    margin-bottom: 2rem;
+    color: var(--alternative-color-2);
+
+}
+.accedi-container-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.accedi-container-svg{
+    width: 50%;
+}
+.accedi-svg{
+    width: 75%;
+}
+.accedi-form__btn{
+    margin-top: 2rem;
+}

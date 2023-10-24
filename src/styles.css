@@ -1,1 +1,142 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Lato', sans-serif;
+  
+  }
+  :root{
+    --primary-color: #121212;
+    --secondary-color : white;
+    --tertiary-color: black;
+    --special-color: red;
+    --alternative-color: green;
+    --alternative-color-2:wheat;
+    --special-color-box : rgb(119, 0, 0);
+    --inactive-color: hsla(0,0%,100%,.678);
+  }
+  
+body{
+  background-color: var(--tertiary-color);
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+button{
+  cursor: pointer;
+}
+.special-text{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Rubik', sans-serif;
+  font-family: 'Pixelify Sans', cursive;
+}
+/* scroll bar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--special-color);
+  border-radius: 10px;
+}
+
+
+/* BTN */
+.btn{
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
+  background: transparent;
+  border: 2px solid var(--special-color);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:  1s;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--special-color); /* Colore blu */
+  transform: translateX(-100%); /* Inizia fuori dalla vista */
+  transition: transform 0.3s;
+  z-index: -1;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--special-color); /* Colore blu */
+  transform: translateX(100%); /* Inizia fuori dalla vista */
+  transition: transform 0.3s;
+  z-index: -1;
+}
+.btn:hover::after {
+  transform: translateX(-50%); 
+}
+
+.btn:hover::before{
+  transform: translateX(50%); /* Spostalo verso destra al passaggio del mouse */
+}
+.btn-special{
+  background-color: var(--alternative-color);
+}
+
+
+.main{
+  width: 100%;
+  height: auto;
+}
+.section{
+  height: 100vh;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-top: 5rem;
+}
+
+
+/* FORM */
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 30rem;
+}
+.form__label{
+  margin-bottom: 12px;
+}
+.form__input{
+  width: 23rem;
+  padding: 0.7rem 1rem ;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color);
+
+}

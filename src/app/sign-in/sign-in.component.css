@@ -1,0 +1,26 @@
+#sign-in{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sign-in-title{
+    font-size: 48px;
+    margin-bottom: 2rem;
+    color: var(--alternative-color-2);
+}
+.sign-in-container-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.sign-in-container-svg{
+    width: 50%;
+}
+.sign-in-svg{
+    width: 75%;
+}
+.sign-in-form__btn{
+    margin-top: 2rem;
+}
