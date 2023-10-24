@@ -1,24 +1,19 @@
-
-<div class="">
+<div class="film-container">
     <h2 class="film__title">{{selectedMovie?.title}}</h2>
 </div>
 <div class="section" id="film-section">
-    <div class="row">
-        <div class="col-lg-6 col-12" class="film">
-            <img class="film__img"  src="https://picsum.photos/seed/picsum/200" alt="">
-            
+    <div class="film-details-container">
+        <div class="film-details-image">
+            <img class="film__img" src="https://picsum.photos/seed/picsum/200" alt="">
         </div>
-        <div class="col-lg-6 col-12 ">
-
-            
-            
+        <div class="film-details-info">
             <p class="film__description">{{selectedMovie?.description}}</p>
             <small>Cast: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias fugit reprehenderit repudiandae, voluptates doloribus magnam veniam quia. Odio exercitationem natus maiores! Beatae nihil possimus itaque iure error nemo tempora qui?</small>
-            <div class="row ">
-                <a routerLink="/reservation"><button  class="add-form__btn btn ">Prenota</button></a>
-                <a routerLink="/catalogue"><button class="add-form__btn btn ">Torna indietro</button></a>
+            <div class="button-container">
+                <a routerLink="/reservation"><button class="add-form__btn btn">Prenota</button></a>
+                <a routerLink="/catalogue"><button class="add-form__btn btn">Torna indietro</button></a>
             </div>
         </div>
     </div>
-    
-   </div>
+</div>
+
