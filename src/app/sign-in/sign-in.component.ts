@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { User } from '../model/user';
 import { MyAuthService } from '../my-auth-service.service';
 import { lastValueFrom } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -30,7 +31,7 @@ export class SignInComponent {
   formIsValid: boolean = false;
 
 
-  constructor(private myAuthService: MyAuthService) { }
+  constructor(private myAuthService: MyAuthService, private router: Router) { }
 
   onNomeChange() {
     if (this.credentials.nome.length < 3){
@@ -146,7 +147,8 @@ export class SignInComponent {
   async signIn() {
     try {
       const result = await lastValueFrom(this.myAuthService.signIn(this.credentials));
-      console.log(result)
+      this.myAuthService.setIsLogged(true);
+      this.router.navigate(["/home"])
     } catch (err) {
       console.log(err);
     }

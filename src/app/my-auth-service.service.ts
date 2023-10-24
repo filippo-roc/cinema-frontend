@@ -16,20 +16,19 @@ export class MyAuthService {
   getUser(): Observable<any> {
     return this.http.get(this.apiUrl)
   }
-  login(credentials: User): boolean {
-    // Simula una verifica delle credenziali (username e password).
-    if (credentials.email === 'demo' && credentials.password === 'demo') {
-      this.isLoggedIn.next(true);
-      console.log(this.isLoggedIn)
-      return true;
-    }
-    // L'accesso è fallito
-    return false;
+  login(credentials: User) {
+    return this.http.post(`${this.apiUrl}login`, {
+      email : credentials.email,
+      password : credentials.password
+    });
+
   }
    signIn(credentials: User) {
     return this.http.post(`${this.apiUrl}register`, credentials);
   }
-
+  setIsLogged(isLogged : boolean){
+    this.isLoggedIn.next(isLogged);
+  }
   logout() {
     this.isLoggedIn.next(false);
   }
