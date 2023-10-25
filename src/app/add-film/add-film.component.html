@@ -1,12 +1,39 @@
-<section  class="section" id="add-film">
-    <h1 class="accedi-title">Inserisci un nuovo film da aggiungere al catalogo</h1>
-    <form action="" class="form">
+<section class="section" id="add-film">
+  <h1 class="accedi-title">Inserisci un nuovo film da aggiungere al catalogo</h1>
+  <form action="" class="form">
+
+      
       <label class="form__label add-form__label" for="nome">Nome</label>
-      <input class="form__input add-form__input"[(ngModel)]="title" name="nome" type="text" value="" />
+      <input class="form__input add-form__input" [(ngModel)]="title" name="nome" type="text" value="" />
 
       <label class="form__label add-form__label" for="descrizione">Descrizione</label>
-      <input  class="form__input add-form__input"[(ngModel)]="description"  name="descrizione" type="text" value=""/>
-      <button (click)="addFilmHandler()" class="add-form__btn btn">AGGIUNGI</button>
-    </form>
+      <input class="form__input add-form__input" [(ngModel)]="description" name="descrizione" type="text" value="" />
 
+      <label class="form__label add-form__label" for="attori">Attori</label>
+      <input class="form__input add-form__input" [(ngModel)]="actors" name="attori" type="text" value="" />
+
+      <label class="form__label add-form__label" for="durata">Durata</label>
+      <input class="form__input add-form__input" [(ngModel)]="duration" name="durata" type="text" value="" />
+      
+
+      <label class="form__label add-form__label" for="anno">Anno di uscita</label>
+      <input class="form__input add-form__input" [(ngModel)]="year" name="anno" type="text" value="" />
+
+      <label class="form__label add-form__label" for="prezzo">Prezzo</label>
+      <input class="form__input add-form__input" [(ngModel)]="price" name="prezzo" type="number" step="0.01" value="" />
+      
+      <label class="form__label add-form__label" for="immagine">URL Immagine</label>
+      <input class="form__input add-form__input" [(ngModel)]="imageURL" name="immagine" type="text" value="" />
+
+      <label *ngIf="imageURL" class="form__label add-form__label" for="anteprima-immagine">Anteprima Immagine</label>
+      <img [src]="imageURL" [ngClass]="{'anteprima-immagine': imageURL}" class="anteprima-immagine" />
+
+
+      <label class="form__label add-form__label" for="categoria">Categoria</label>
+      <select class="form__input add-form__input " [(ngModel)]="category" name="categoria">
+          <option class="colore-option" *ngFor="let cat of categories" [value]="cat">{{cat.name}}</option>
+      </select>
+
+      <button (click)="addFilmHandler()" class="add-form__btn btn">AGGIUNGI</button>
+  </form>
 </section>

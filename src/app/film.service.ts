@@ -6,11 +6,11 @@ import { Film } from './model/Film';
   providedIn: 'root',
 })
 export class FilmService {
+  selectedFilm: any;
   private films: Film[] = [
-    new Film("Film 1","Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dignissimos optio praesentium. Optio id beatae iure atque ex sit odit." ),
-    new Film("Film 2","Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dignissimos optio praesentium. Optio id beatae iure atque ex sit odit." ),
-    new Film("Film 3","Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dignissimos optio praesentium. Optio id beatae iure atque ex sit odit." )
-   ]; // Inizializza con un array vuoto
+    new Film("Film 3", "Descrizione del Film 3", "https://www.artemedialab.it/wp-content/uploads/2019/04/immagini-sfondo-1-700x400.jpg", "Attori", "Durata", "Anno", 10, "Categoria")
+
+      ]; // Inizializza con un array vuoto
 
   getFilms(): Film[] {
     return this.films;
@@ -21,4 +21,6 @@ export class FilmService {
   }
 
   // Altri metodi per la gestione dei film
+
+ 
 }
