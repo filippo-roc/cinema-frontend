@@ -1,9 +1,4 @@
-#add-film{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
+
 .accedi-title{
     margin-bottom: 3rem;
     text-transform: uppercase;
@@ -77,7 +72,8 @@
 
 .film-details-container {
     display: flex;
-    flex-direction: row; 
+    flex-direction: column;
+    align-items: center; 
 }
 
 .film-details-image {
@@ -100,7 +96,9 @@
 }
 
 
-
+.prenotation-text{
+    
+}
 
 
 

@@ -146,8 +146,9 @@ export class SignInComponent {
 
   async signIn() {
     try {
-      const result = await lastValueFrom(this.myAuthService.signIn(this.credentials));
+      const result:any = await lastValueFrom(this.myAuthService.signIn(this.credentials));
       this.myAuthService.setIsLogged(true);
+      this.myAuthService.setUserToken(result.token)
       this.router.navigate(["/home"])
     } catch (err) {
       console.log(err);

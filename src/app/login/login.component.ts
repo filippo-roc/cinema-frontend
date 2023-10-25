@@ -77,8 +77,6 @@ export class LoginComponent {
   async onLogin() {
     try {
       const result = await lastValueFrom(this.myAuthService.login(this.credentials));
-      console.log(result)
-      this.myAuthService.setIsLogged(true);
       this.router.navigate(["/home"])
     } catch (err) {
       console.log(err);
