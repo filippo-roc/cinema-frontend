@@ -1,6 +1,5 @@
 
 .accedi-title{
-    margin-bottom: 3rem;
     text-transform: uppercase;
     color: var(--alternative-color-2);
     font-size: 2rem;
@@ -20,15 +19,13 @@
 }
 #film-section{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: column;
     flex-wrap: wrap;
-    padding-top: 5rem;
 }
 .film{
     width: 25rem;
     height: 25rem;
-    margin-top: 2rem;
     border-radius: 8px;
     cursor: pointer;
     border: 2px solid var(--special-color);
@@ -79,7 +76,6 @@
 
 .film-details-image {
     flex: 1; 
-    
 }
 
 .film-details-info {
