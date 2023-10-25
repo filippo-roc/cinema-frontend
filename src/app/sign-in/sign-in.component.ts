@@ -151,7 +151,8 @@ export class SignInComponent {
       this.myAuthService.setUserToken(result.token)
       this.router.navigate(["/home"])
     } catch (err) {
-      console.log(err);
+      console.log(err)
+      this.errorMessageDisplayed = err.error.message;
     }
   }
 }
