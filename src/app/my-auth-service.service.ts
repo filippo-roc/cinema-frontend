@@ -10,41 +10,67 @@ import { User } from './model/user';
 export class MyAuthService {
   private isLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject(false);
   private apiUrl = "http://localhost:8080/api/v1/";
-  private user:User = new User("","","","","");
+  private user: User = new User("", "", "", "", "");
 
   constructor(private http: HttpClient) {
-   if(localStorage.getItem("authToken")) this.setIsLogged(true);
-   }
+   this.recoverDataFromLocalStorage();
+  }
 
 
   login(credentials: User) {
+
+
     return this.http.post(`${this.apiUrl}login`, {
-      email : credentials.email,
-      password : credentials.password
+      email: credentials.email,
+      password: credentials.password
     });
   }
 
-   signIn(credentials: User) {
+  signIn(credentials: User) {
     return this.http.post(`${this.apiUrl}register`, credentials);
   }
 
-  setIsLogged(isLogged : boolean){
+  private setIsLogged(isLogged: boolean) {
     this.isLoggedIn.next(isLogged);
   }
 
   logout() {
-    localStorage.removeItem("authToken");
-    return this.http.post(`${this.apiUrl}logout`,{token :  this.user.token})
+    localStorage.removeItem("userData");
+    this.setIsLogged(false);
+    return this.http.post(`${this.apiUrl}logout`, { token: this.user.token })
   }
-  
+
   getIsLoggedIn() {
     return this.isLoggedIn;
   }
 
+  setUserCredentials(nome, surname, email, phoneNumber, token) {
+    // save user data
+    this.user.nome = nome;
+    this.user.surname = surname;
+    this.user.email = email;
+    this.user.phoneNumber = phoneNumber;
+    this.user.token = token;
 
-  setUserToken(token:string){
-  localStorage.setItem("authToken", token);
-  this.user.token = token;
+    // set logged to true 
+    this.setIsLogged(true);
+
+    // save data in local storage 
+    this.saveDataToLocalStorage();
   }
+
+  private recoverDataFromLocalStorage() {
+    const userData: any = JSON.parse(localStorage.getItem("userData"));
+    if (userData) {
+      this.setUserCredentials(userData.nome, userData.surname, userData.email, userData.phoneNumber, userData.token);;
+      this.setIsLogged(true);
+    }
+  }
+  private saveDataToLocalStorage() {
+    // save the obj in local storage 
+    const userString = JSON.stringify(this.user);
+    localStorage.setItem("userData", userString);
+  }
+
   // Resto del servizio...
 }

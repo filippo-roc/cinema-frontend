@@ -49,6 +49,7 @@ export class SignInComponent {
     this.checkMessage();
     this.checkIsValid();
   }
+  
   onSurnameChange() {
     if (this.credentials.surname.length < 3){
       this.surnameIsValid = false;
@@ -146,9 +147,13 @@ export class SignInComponent {
 
   async signIn() {
     try {
+      // request to server
       const result:any = await lastValueFrom(this.myAuthService.signIn(this.credentials));
-      this.myAuthService.setIsLogged(true);
-      this.myAuthService.setUserToken(result.token)
+      // get the tokem
+      const token = {result};
+      // save user data
+      this.myAuthService.setUserCredentials(this.credentials.nome, this.credentials.surname, this.credentials.email, this.credentials.phoneNumber, token)
+      // go to home
       this.router.navigate(["/home"])
     } catch (err) {
       console.log(err)

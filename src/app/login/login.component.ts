@@ -64,6 +64,8 @@ export class LoginComponent {
       this.errorMessageDisplayed = this.passwordErrorMessage;
       return;
     }
+    this.errorMessageDisplayed = "";
+
   }
 
   checkIsValid() {
@@ -76,7 +78,17 @@ export class LoginComponent {
   
   async onLogin() {
     try {
-      const result = await lastValueFrom(this.myAuthService.login(this.credentials));
+      // send request to login to the server
+      const result:any = await lastValueFrom(this.myAuthService.login(this.credentials));
+      // get the data 
+      const token = {result};
+      const nome = {result};
+      const surname = {result};
+      const email = {result};
+      const phoneNumber = {result};
+      // save user data 
+      this.myAuthService.setUserCredentials(nome,surname,email,phoneNumber,token);   
+      // go to home  
       this.router.navigate(["/home"])
     } catch (err) {
       console.log(err);
