@@ -12,6 +12,7 @@
 }
 .add-form__btn{
     align-self: center;
+    margin-bottom: 30px;
 }
 .add-form__input{
     width: 100%;
@@ -20,4 +21,17 @@
     text-align: center;
     align-self: center;
     font-size: 18px;
+}
+.colore-option{
+color: black;
+}
+.form{
+    position: relative;
+    top: 100px;
+    
+}
+.anteprima-immagine{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 30px;
 }
