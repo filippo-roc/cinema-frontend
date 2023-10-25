@@ -8,7 +8,8 @@ import { CatalogueComponent } from './catalogue/catalogue.component';
 import { AddFilmComponent } from './add-film/add-film.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { DettaglioFilmComponent } from './dettaglio-film/dettaglio-film.component';
-import { authGuard } from './auth.guard';
+import { authGuardNotLogged } from './auth.guard';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
@@ -23,12 +24,17 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canActivate:[authGuard]
+    canActivate:[authGuardNotLogged]
   },
   {
     path: 'signin',
     component: SignInComponent,
-    canActivate:[authGuard]
+    canActivate:[authGuardNotLogged]
+
+  },
+  {
+    path: 'user',
+    component: UserComponent,
 
   },
   {

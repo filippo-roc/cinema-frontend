@@ -5,11 +5,11 @@
        <label class="form__label" for="nome">Nome</label>
        <input 
        value=""
-       [ngClass] = "{'form__input-error': nomeErrorMessage}"
-       [(ngModel)]="credentials.nome"
-       (input) = "onNomeChange()"
+       [ngClass] = "{'form__input-error': nameErrorMessage}"
+       [(ngModel)]="credentials.name"
+       (input) = "onNameChange()"
         class="form__input" 
-       name="nome"
+       name="name"
        type="text" />
 
        <label class="form__label" for="surname">cognome</label>

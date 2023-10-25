@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { MyAuthService } from '../my-auth-service.service';
 import { lastValueFrom } from 'rxjs';
-
+import { User } from '../model/user';
+import { UserService } from '../user.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,10 +10,15 @@ import { lastValueFrom } from 'rxjs';
 })
 export class HeaderComponent {
   isLoggedIn: boolean = false;
-  constructor(private myAuthService: MyAuthService) {
+  userName  = "";
+
+  constructor(private myAuthService: MyAuthService, private userService: UserService) {
     this.myAuthService.getIsLoggedIn().subscribe((value) => {
       this.isLoggedIn = value;
+      this.userName = userService.user.name;
+      console.log(this.userName)
     })
+    
   }
 
  async onLogout() {

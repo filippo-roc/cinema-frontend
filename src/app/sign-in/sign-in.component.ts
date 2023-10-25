@@ -14,13 +14,13 @@ export class SignInComponent {
   credentials: User = new User("", "", "", "", "")
   emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  nomeIsValid: Boolean = false;
+  nameIsValid: Boolean = false;
   surnameIsValid: Boolean = false;
   emailIsValid: Boolean = false;
   passwordIsValid: Boolean = false;
   phoneNumberIsValid: Boolean = false;
 
-  nomeErrorMessage: String = "";
+  nameErrorMessage: String = "";
   surnameErrorMessage: String = "";
   emailErrorMessage: String = "";
   passwordErrorMessage: String = "";
@@ -33,18 +33,18 @@ export class SignInComponent {
 
   constructor(private myAuthService: MyAuthService, private router: Router) { }
 
-  onNomeChange() {
-    if (this.credentials.nome.length < 3){
-      this.nomeIsValid = false;
-      this.nomeErrorMessage = "il nome è troppo corto"
+  onNameChange() {
+    if (this.credentials.name.length < 3){
+      this.nameIsValid = false;
+      this.nameErrorMessage = "il name è troppo corto"
     }
-    else if(this.credentials.nome.length > 18){
-      this.nomeIsValid = false;
-      this.nomeErrorMessage = "il nome è troppo lungo"
+    else if(this.credentials.name.length > 18){
+      this.nameIsValid = false;
+      this.nameErrorMessage = "il name è troppo lungo"
     }
     else {
-      this.nomeIsValid = true;
-      this.nomeErrorMessage = ""
+      this.nameIsValid = true;
+      this.nameErrorMessage = ""
     }
     this.checkMessage();
     this.checkIsValid();
@@ -53,11 +53,11 @@ export class SignInComponent {
   onSurnameChange() {
     if (this.credentials.surname.length < 3){
       this.surnameIsValid = false;
-      this.surnameErrorMessage = "il cognome è troppo corto"
+      this.surnameErrorMessage = "il cogname è troppo corto"
     }
-    else if(this.credentials.nome.length > 18){
+    else if(this.credentials.name.length > 18){
       this.surnameIsValid = false;
-      this.surnameErrorMessage = "il cognome è troppo lungo"
+      this.surnameErrorMessage = "il cogname è troppo lungo"
     }
     else {
       this.surnameIsValid = true;
@@ -110,8 +110,8 @@ export class SignInComponent {
   }
 
   checkMessage(){
-    if(this.nomeErrorMessage){
-      this.errorMessageDisplayed = this.nomeErrorMessage;
+    if(this.nameErrorMessage){
+      this.errorMessageDisplayed = this.nameErrorMessage;
       return;
     }
 
@@ -138,7 +138,7 @@ export class SignInComponent {
   }
 
   checkIsValid() {
-    if(this.nomeIsValid && this.surnameIsValid && this.phoneNumberIsValid && this.passwordIsValid && this.emailIsValid){
+    if(this.nameIsValid && this.surnameIsValid && this.phoneNumberIsValid && this.passwordIsValid && this.emailIsValid){
       this.formIsValid = true;
       return;
     }
@@ -150,9 +150,9 @@ export class SignInComponent {
       // request to server
       const result:any = await lastValueFrom(this.myAuthService.signIn(this.credentials));
       // get the tokem
-      const token = {result};
+      const token =result.data.token;
       // save user data
-      this.myAuthService.setUserCredentials(this.credentials.nome, this.credentials.surname, this.credentials.email, this.credentials.phoneNumber, token)
+      this.myAuthService.setUserCredentials(this.credentials.name, this.credentials.surname, this.credentials.email, this.credentials.phoneNumber, token)
       // go to home
       this.router.navigate(["/home"])
     } catch (err) {

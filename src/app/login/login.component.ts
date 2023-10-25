@@ -81,13 +81,13 @@ export class LoginComponent {
       // send request to login to the server
       const result:any = await lastValueFrom(this.myAuthService.login(this.credentials));
       // get the data 
-      const token = {result};
-      const nome = {result};
-      const surname = {result};
-      const email = {result};
-      const phoneNumber = {result};
+      const token = result.data.token;
+      const name = result.data.name;
+      const surname = result.data.surname;
+      const email = result.data.email;
+      const phoneNumber = result.data.phoneNumber;
       // save user data 
-      this.myAuthService.setUserCredentials(nome,surname,email,phoneNumber,token);   
+      this.myAuthService.setUserCredentials(name,surname,email,phoneNumber,token);   
       // go to home  
       this.router.navigate(["/home"])
     } catch (err) {
