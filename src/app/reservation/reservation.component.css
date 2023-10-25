@@ -21,6 +21,7 @@
 #film-section{
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
     flex-wrap: wrap;
     padding-top: 5rem;
 }
@@ -97,7 +98,7 @@
 
 
 .prenotation-text{
-    
+    text-align: center;
 }
 
 
