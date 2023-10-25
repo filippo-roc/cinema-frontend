@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding-top: 5rem;
 }
 .film{
     width: 25rem;

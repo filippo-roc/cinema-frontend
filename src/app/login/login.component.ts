@@ -80,6 +80,7 @@ export class LoginComponent {
       this.router.navigate(["/home"])
     } catch (err) {
       console.log(err);
+      this.errorMessageDisplayed = err.error.message;
     }
   }
 }

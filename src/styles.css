@@ -54,8 +54,6 @@ button{
   background: var(--special-color);
   border-radius: 10px;
 }
-
-
 /* BTN */
 .btn{
   padding: 0.8rem 1.6rem;
@@ -123,7 +121,7 @@ button{
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
-  padding-top: 5rem;
+  margin-top: 5rem;
 }
 
 

@@ -48,9 +48,8 @@
        type="password" 
        
        />
-
-       <button [disabled] = "!formIsValid" class="sign-in-form__btn btn" (click) ="signIn()">Registrati</button>
-       <p class="sign-in__error-message">{{errorMessageDisplayed}}</p>
+        <button [disabled] = "!formIsValid" class="sign-in-form__btn btn" (click) ="signIn()">Registrati</button>
+          <p class="sign-in__error-message">{{errorMessageDisplayed}}</p>
       </form>
    </div>
    <div class="sign-in-container-svg">

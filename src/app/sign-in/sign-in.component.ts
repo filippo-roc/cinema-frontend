@@ -152,7 +152,12 @@ export class SignInComponent {
       this.router.navigate(["/home"])
     } catch (err) {
       console.log(err)
+      if(err.error.message == "Il numero di telefono è errato"){
+        err.error.message = err.error.message + " ,ricontrolla(ricorda di non aggiungere il prefisso)"
+      }
+
       this.errorMessageDisplayed = err.error.message;
+
     }
   }
 }
