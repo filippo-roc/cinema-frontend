@@ -12,7 +12,9 @@ export class MyAuthService {
   private apiUrl = "http://localhost:8080/api/v1/";
   private user:User = new User("","","","","");
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+   if(localStorage.getItem("authToken")) this.setIsLogged(true);
+   }
 
 
   login(credentials: User) {
@@ -31,6 +33,7 @@ export class MyAuthService {
   }
 
   logout() {
+    localStorage.removeItem("authToken");
     return this.http.post(`${this.apiUrl}logout`,{token :  this.user.token})
   }
   
@@ -40,6 +43,7 @@ export class MyAuthService {
 
 
   setUserToken(token:string){
+  localStorage.setItem("authToken", token);
   this.user.token = token;
   }
   // Resto del servizio...
