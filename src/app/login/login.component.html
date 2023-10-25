@@ -1,18 +1,34 @@
-<section class="section" id="accedi">
-    <div class="accedi-container-form">
-     <h1 class="accedi-title">Inserisci le credenziali</h1>
+<section class="section" id="login">
+    <div class="login-container-form">
+     <h1 class="login-title">Inserisci le credenziali</h1>
      <form action="" class="form">
-       <label class="form__label" for="email">Email</label>
-       <input [(ngModel)]="credentials.email" class="form__input" name="email" type="email" value="" />
+      <label class="form__label" for="email">Email</label>
+      <input 
+      value=""
+      [ngClass] = "{'form__input-error': emailErrorMessage}"
+      [(ngModel)]="credentials.email"
+      (input) = "onEmailChange()"
+      class="form__input" name="email" type="email" />
 
-       <label class="form__label" for="password">Password</label>
-       <input [(ngModel)]="credentials.password" class="form__input" name="password" type="password" value=""/>
-       <button (click)="onLogin()" class="accedi-form__btn btn">ACCEDI</button>
-     </form>
+      <label class="form__label" for="password">Password</label>
+      <input 
+      value=""
+      [ngClass] = "{'form__input-error': passwordErrorMessage}"
+
+      [(ngModel)]="credentials.password" 
+      (input) = "onPasswordChange()"
+      class="form__input" 
+      name="password" 
+      type="password" 
+      
+      />
+      <button [disabled] = "!formIsValid" class="login-form__btn btn" (click) ="onLogin()">Accedi</button>
+      <p class="login__error-message">{{errorMessageDisplayed}}</p>     
+    </form>
    </div>
-   <div class="accedi-container-svg">
+   <div class="login-container-svg">
      <svg
-       class="accedi-svg"
+       class="login-svg"
        xmlns="http://www.w3.org/2000/svg"
        data-name="Layer 1"
        width="869.99994"

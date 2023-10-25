@@ -1,27 +1,42 @@
-#accedi{
+#login{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.accedi-title{
+.login-title{
     font-size: 48px;
     margin-bottom: 2rem;
     color: var(--alternative-color-2);
 
 }
-.accedi-container-form{
+.login-container-form{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 50%;
 }
-.accedi-container-svg{
+.login-container-svg{
     width: 50%;
 }
-.accedi-svg{
+.login-svg{
     width: 75%;
 }
-.accedi-form__btn{
+.login-form__btn{
     margin-top: 2rem;
+}
+
+.login__error-message{
+    color: red;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.login-form__btn:disabled{
+    background-color: gray;
+    border: none;
+    cursor:not-allowed;
+}
+.form__input-error{
+    border: 2px solid red;
 }

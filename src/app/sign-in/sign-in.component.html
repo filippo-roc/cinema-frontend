@@ -3,19 +3,54 @@
      <h1 class="sign-in-title">Inserisci le credenziali</h1>
      <form action="" class="form">
        <label class="form__label" for="nome">Nome</label>
-       <input class="form__input" name="nome" type="text" />
+       <input 
+       value=""
+       [ngClass] = "{'form__input-error': nomeErrorMessage}"
+       [(ngModel)]="credentials.nome"
+       (input) = "onNomeChange()"
+        class="form__input" 
+       name="nome"
+       type="text" />
 
-       <label class="form__label" for="cognome">Cognome</label>
-       <input class="form__input" name="cognome" type="cognome" />
+       <label class="form__label" for="surname">cognome</label>
+       <input
+       value=""
+       [ngClass] = "{'form__input-error': surnameErrorMessage }"
+        [(ngModel)]="credentials.surname" 
+        (input) = "onSurnameChange()"
+        class="form__input" name="surname" type="text" />
 
        <label class="form__label" for="email">Email</label>
-       <input class="form__input" name="email" type="email" />
+       <input 
+       value=""
+       [ngClass] = "{'form__input-error': emailErrorMessage}"
+       [(ngModel)]="credentials.email"
+       (input) = "onEmailChange()"
+       class="form__input" name="email" type="email" />
+
+       <label class="form__label" for="phoneNumber">Numero Di Telefono</label>
+       <input 
+       value=""
+       [ngClass] = "{'form__input-error': phoneNumberErrorMessage}"
+       [(ngModel)]="credentials.phoneNumber"
+       (input) = "onPhoneNumberChange()"
+       class="form__input" name="phoneNumber" type="tel" />
 
        <label class="form__label" for="password">Password</label>
-       <input class="form__input" name="password" type="password" />
+       <input 
+       value=""
+       [ngClass] = "{'form__input-error': passwordErrorMessage}"
 
-       <button class="sign-in-form__btn btn">Registrati</button>
-     </form>
+       [(ngModel)]="credentials.password" 
+       (input) = "onPasswordChange()"
+       class="form__input" 
+       name="password" 
+       type="password" 
+       
+       />
+        <button [disabled] = "!formIsValid" class="sign-in-form__btn btn" (click) ="signIn()">Registrati</button>
+          <p class="sign-in__error-message">{{errorMessageDisplayed}}</p>
+      </form>
    </div>
    <div class="sign-in-container-svg">
      <svg class="sign-in-svg" xmlns="http://www.w3.org/2000/svg" width="733.82" height="503.768" viewBox="0 0 733.82 503.768" xmlnsXlink="http://www.w3.org/1999/xlink">

@@ -1,12 +1,14 @@
 #sign-in{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    height: 100%;
 }
 .sign-in-title{
     font-size: 48px;
     margin-bottom: 2rem;
     color: var(--alternative-color-2);
+    margin-top: 1rem;
 }
 .sign-in-container-form{
     display: flex;
@@ -22,5 +24,19 @@
     width: 75%;
 }
 .sign-in-form__btn{
-    margin-top: 2rem;
+    margin-top: 0.5rem;
+}
+.sign-in-form__btn:disabled{
+    background-color: gray;
+    border: none;
+    cursor:not-allowed;
+}
+.sign-in__error-message{
+    color: red;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.form__input-error{
+    border: 2px solid red;
 }

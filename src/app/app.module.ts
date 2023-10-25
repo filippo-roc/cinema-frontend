@@ -13,8 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AddFilmComponent } from './add-film/add-film.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { DettaglioFilmComponent } from './dettaglio-film/dettaglio-film.component';
-import { ReservationComponent } from './reservation/reservation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +23,6 @@ import { ReservationComponent } from './reservation/reservation.component';
     HeaderComponent,
     HomeComponent,
     AddFilmComponent,
-    DettaglioFilmComponent,
-    ReservationComponent,
   ],
   imports: [
     BrowserModule,

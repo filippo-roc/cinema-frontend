@@ -54,8 +54,6 @@ button{
   background: var(--special-color);
   border-radius: 10px;
 }
-
-
 /* BTN */
 .btn{
   padding: 0.8rem 1.6rem;
@@ -63,36 +61,48 @@ button{
   font-weight: bold;
   font-size: 16px;
   background: transparent;
-  border: 2px solid var(--special-color);
+  border: 3px solid var(--special-color);
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition:  1s;
 }
+.btn--alternative{
+  border-color: var(--alternative-color-2);
+}
+.btn--alternative:hover{
+  color: var(--primary-color);
 
+}
 .btn::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 101%;
   height: 100%;
   background: var(--special-color); /* Colore blu */
   transform: translateX(-100%); /* Inizia fuori dalla vista */
   transition: transform 0.3s;
   z-index: -1;
 }
+.btn--alternative::after{
+  background-color: var(--alternative-color-2);
+}
 .btn::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
-  width: 100%;
+  width: 101%;
   height: 100%;
   background: var(--special-color); /* Colore blu */
   transform: translateX(100%); /* Inizia fuori dalla vista */
   transition: transform 0.3s;
   z-index: -1;
+}
+.btn--alternative::before{
+  background-color: var(--alternative-color-2);
 }
 .btn:hover::after {
   transform: translateX(-50%); 
@@ -101,10 +111,6 @@ button{
 .btn:hover::before{
   transform: translateX(50%); /* Spostalo verso destra al passaggio del mouse */
 }
-.btn-special{
-  background-color: var(--alternative-color);
-}
-
 
 .main{
   width: 100%;
@@ -115,7 +121,7 @@ button{
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
-  padding-top: 5rem;
+  margin-top: 5rem;
 }
 
 

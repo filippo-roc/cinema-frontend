@@ -6,11 +6,10 @@
         {{film.description}}
       </p>
 
-      <div>
-        <a routerLink="/reservation"><button  type="submit" class="add-form__btn btn ">Prenota</button></a>
-    <a routerLink="/dettaglio-film"><button  class="add-form__btn btn ">Dettaglio</button></a>
-    
-    </div>
+      <div class="btn-container">
+        <button  routerLink="/dettaglio-film" type="submit" class="add-form__btn btn btn--alternative ">Dettaglio</button>
+        <button type="submit" class="add-form__btn btn" routerLink="/reservation">Prenota</button>
+      </div>
     </article>
    
   </section>
