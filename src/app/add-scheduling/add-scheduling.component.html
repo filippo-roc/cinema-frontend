@@ -1,40 +1,34 @@
+<!-- add-scheduling.component.html -->
 <section class="add-scheduling section">
-
     <section class="section" id="add-scheduling">
-        <h1 class="accedi-title">Inserisci una programmazione</h1>
-        <form action="" class="form">
-      
-            
-            <label class="form__label add-form__label" for="film">Film</label>
-            <input class="form__input add-form__input" [(ngModel)]="filmId" name="film" type="text" value="" />
-      
-            
-            <label for="hall" class="form__label add-form__label ">Sala</label>
-            <select id="hall" class="form__input add-form__input " [(ngModel)]="hallId" name="hall">
-                <option class="colore-option" value="Sala 1">Sala 1</option>
-                <option  class="colore-option" value="Sala 2">Sala 2</option>
-                <option  class="colore-option" value="Sala 3">Sala 3</option>
-                <option  class="colore-option" value="Sala 4">Sala 4</option>
-                <option  class="colore-option" value="Sala 5">Sala 5</option>
-                <option  class="colore-option" value="Sala 6">Sala 6</option>
-                <option  class="colore-option" value="Sala 7">Sala 7</option>
-            </select>
-            
-            <label class="form__label add-form__label" for="data">Data</label>
-            <input class="form__input add-form__input" [(ngModel)]="data" name="data" type="date" value="" />
-      
-            <label for="hall" class="form__label add-form__label ">Ora</label>
-            <select id="hall" class="form__input add-form__input " [(ngModel)]="ora" name="hall">
-                <option class="colore-option" value="18.30">18.30</option>
-                <option  class="colore-option" value="20.30">20.30</option>
-                <option  class="colore-option" value="22.30">22.30</option>
-               
-            </select>
-      
-             
-      
-            <button  class="add-form__btn btn">AGGIUNGI</button>
-        </form>
-      </section>
-      
+      <h1 class="accedi-title">Inserisci una programmazione</h1>
+      <form class="form">
+        <label class="form__label add-form__label" for="film">Film</label>
+        <select class="form__input add-form__input " name="selectedFilm" [(ngModel)]="selectedFilmId">
+            <option *ngFor="let film of films" [value]="film.id">{{ film.title }}</option>
+          </select>
+          
+
+        <label for="hall" class="form__label add-form__label ">Sala</label>
+        <select id="hall" class="form__input add-form__input " [(ngModel)]="hallId" name="hall">
+            <option class="colore-option" value="Sala 1">Sala 1</option>
+            <option  class="colore-option" value="Sala 2">Sala 2</option>
+            <option  class="colore-option" value="Sala 3">Sala 3</option>
+            <option  class="colore-option" value="Sala 4">Sala 4</option>
+            <option  class="colore-option" value="Sala 5">Sala 5</option>
+            <option  class="colore-option" value="Sala 6">Sala 6</option>
+            <option  class="colore-option" value="Sala 7">Sala 7</option>
+        </select>
+        <label class="form__label add-form__label" for="data">Data</label>
+        <input class="form__input add-form__input" [(ngModel)]="data" name="data" type="date" value="" />
+  
+        <label class="form__label add-form__label" for="ora">Ora</label>
+        <select id="hall" class="form__input add-form__input " [(ngModel)]="ora" name="ora">
+            <option class="colore-option" value="18.30">18.30</option>
+            <option  class="colore-option" value="20.30">20.30</option>
+            <option  class="colore-option" value="22.30">22.30</option>
+        </select>
+        <button  class="add-form__btn btn">AGGIUNGI</button>
+      </form>
+    </section>
 </section>

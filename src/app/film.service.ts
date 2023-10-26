@@ -6,7 +6,7 @@ import { Film } from './model/Film';
   providedIn: 'root',
 })
 export class FilmService {
-  private apiUrl = "http://localhost:8080/api/v1/";
+  
   
   selectedFilm: any;
   private films: Film[] = [
