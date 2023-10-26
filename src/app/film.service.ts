@@ -1,6 +1,8 @@
 // film.service.ts
 import { Injectable } from '@angular/core';
 import { Film } from './model/Film';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, lastValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,19 +11,27 @@ export class FilmService {
   private apiUrl = "http://localhost:8080/api/v1/";
   
   selectedFilm: any;
-  private films: Film[] = [
-    new Film("Film 3", "Descrizione del Film 3", "https://www.artemedialab.it/wp-content/uploads/2019/04/immagini-sfondo-1-700x400.jpg", "Attori", "Durata", "Anno", 10, "Categoria")
+  films: BehaviorSubject<Film[]> = new BehaviorSubject([]); 
 
-      ]; // Inizializza con un array vuoto
+   constructor(private http: HttpClient){
+   }
+   
+  async fetchFilms(){
+    try{
+      const result:any = await lastValueFrom(this.getFilms());
+      console.log(result)
+      this.films.next(result)
+    }catch(err){
 
-  getFilms(): Film[] {
-    return this.films;
+    }
+   }
+
+  getFilms() {
+    return this.http.get(`${this.apiUrl}films`);
   }
+  addFilm(newFilm){
 
-  addFilm(newFilm: Film) {
-    this.films.push(newFilm);
   }
-
   // Altri metodi per la gestione dei film
 
  

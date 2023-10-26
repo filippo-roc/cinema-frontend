@@ -16,7 +16,6 @@ export class UserService {
     this.user.email = email;
     this.user.phoneNumber = phoneNumber;
     this.user.token = token;
-    console.log(this.user)
   }
  
 }

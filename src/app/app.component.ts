@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FilmService } from './film.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PROGETTO-CINEMA-ANGULAR';
+  constructor(filmService : FilmService){
+    filmService.fetchFilms();
+  }
 }

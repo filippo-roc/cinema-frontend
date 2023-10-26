@@ -1,7 +1,7 @@
 <section class="section" id="film-section">
     <article *ngFor="let film of films" class="film">
-      <h2 class="film__title">{{film.title}}</h2>
-      <img class="film__img" src="../../assets/prova.jpg" alt="" />
+      <h2 class="film__title">{{film.name}}</h2>
+      <img class="film__img" [src]="film.imageUrl" alt="" />
       <p class="film__description">
         {{film.description}}
       </p>

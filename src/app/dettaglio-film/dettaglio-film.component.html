@@ -1,10 +1,10 @@
 <div class="film-container">
-  <h2 class="film__title">{{selectedMovie?.title}}</h2>
+  <h2 class="film__title">{{selectedMovie?.name}}</h2>
 </div>
 <div class="section" id="film-section">
   <div class="film-details-container">
     <div class="film-details-image">
-      <img class="film__img" [src]="selectedMovie?.imageURL" alt="">
+      <img class="film__img" [src]="selectedMovie?.imageUrl" alt="">
     </div>
     <div class="film-details-info">
       <p class="film__description">{{selectedMovie?.description}}</p>

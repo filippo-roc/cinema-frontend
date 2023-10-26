@@ -1,8 +1,8 @@
 export class Film {   
-    title:string = "";
+    name:string = "";
     description:string = "";
 
-    imageURL: string = '';
+    imageUrl: string = '';
    
     actors!: string;
     duration!: string;
@@ -10,10 +10,10 @@ export class Film {
     price!: number;
     category!: string;
   
-    constructor(title:string, description:string, imageURL:string, actors: string, duration: string,year: string, price:number,category:string) {
-    this.title = title;
+    constructor(name:string, description:string, imageUrl:string, actors: string, duration: string,year: string, price:number,category:string) {
+    this.name = name;
     this.description = description;
-    this.imageURL= imageURL;
+    this.imageUrl= imageUrl;
     this.actors= actors;
     this.duration= duration;
     this.year= year;

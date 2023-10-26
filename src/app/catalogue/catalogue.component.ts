@@ -10,6 +10,7 @@ import { FilmService } from '../film.service';
 export class CatalogueComponent {
   films: Film[];
   constructor(private filmService: FilmService) {
-    this.films = filmService.getFilms();
+    this.filmService.films.subscribe(value => this.films = value)
+
   }
 }
