@@ -1,3 +1,32 @@
-.add.scheduling{
+
+.accedi-title{
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    color: var(--alternative-color-2);
+    font-size: 2rem;
+    position: absolute;
+    left: 450px;
+  bottom: 450px;
     
 }
+.add-form__btn{
+    align-self: center;
+    margin-bottom: 30px;
+}
+.add-form__input{
+    width: 100%;
+}
+.add-form__label{
+    text-align: center;
+    align-self: center;
+    font-size: 18px;
+}
+.colore-option{
+color: black;
+}
+.form{
+    position: absolute;
+    left: 500px;
+   bottom: 20px;
+}
+
