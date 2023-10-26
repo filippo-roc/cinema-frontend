@@ -14,6 +14,9 @@ import { AddFilmComponent } from './add-film/add-film.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
+import { AddComponent } from './add/add.component';
+import { AddSchedulingComponent } from './add-scheduling/add-scheduling.component';
+import { AddHallComponent } from './add-hall/add-hall.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +28,9 @@ import { UserComponent } from './user/user.component';
     HomeComponent,
     AddFilmComponent,
     UserComponent,
+    AddComponent,
+    AddSchedulingComponent,
+    AddHallComponent,
   ],
   imports: [
     BrowserModule,

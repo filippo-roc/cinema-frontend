@@ -9,7 +9,7 @@
       <li *ngIf="!isLoggedIn" class="menu__item"><a routerLink="/login" routerLinkActive="active">Accedi</a></li>
       <li *ngIf="!isLoggedIn" class="menu__item"><a routerLink="/signin" routerLinkActive="active">Iscriviti</a></li>
       <li *ngIf="isLoggedIn" class="menu__item"><a routerLink="/user" routerLinkActive="active">{{userName}}</a></li>
-      <li *ngIf="isLoggedIn" class="menu__item"><a routerLink="/add-film" routerLinkActive="active">Aggiungi</a></li>
+      <li *ngIf="isLoggedIn" class="menu__item"><a routerLink="/add" routerLinkActive="active">Aggiungi</a></li>
       <li *ngIf="isLoggedIn" class="menu__item" (click) = "onLogout()"><a routerLink="/home" routerLinkActive="active">Esci</a></li>
    </ul>
   </nav>

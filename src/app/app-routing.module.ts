@@ -10,6 +10,9 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { DettaglioFilmComponent } from './dettaglio-film/dettaglio-film.component';
 import { authGuardNotLogged } from './auth.guard';
 import { UserComponent } from './user/user.component';
+import { AddSchedulingComponent } from './add-scheduling/add-scheduling.component';
+import { AddHallComponent } from './add-hall/add-hall.component';
+import { AddComponent } from './add/add.component';
 
 const routes: Routes = [
   {
@@ -46,8 +49,20 @@ const routes: Routes = [
     component: CatalogueComponent,
   },
   {
+    path: 'add',
+    component: AddComponent,
+  },
+  {
     path: 'add-film',
     component: AddFilmComponent,
+  },
+  {
+    path: 'add-scheduling',
+    component: AddSchedulingComponent,
+  },
+  {
+    path: 'add-hall',
+    component: AddHallComponent,
   },
   {
     path: 'reservation',
