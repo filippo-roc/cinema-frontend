@@ -14,9 +14,10 @@ import { AddFilmComponent } from './add-film/add-film.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
-import { AddComponent } from './add/add.component';
 import { AddSchedulingComponent } from './add-scheduling/add-scheduling.component';
 import { AddHallComponent } from './add-hall/add-hall.component';
+import { UserReservationComponent } from './user-reservation/user-reservation.component';
+import { ManageComponent } from './manage/manage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +29,10 @@ import { AddHallComponent } from './add-hall/add-hall.component';
     HomeComponent,
     AddFilmComponent,
     UserComponent,
-    AddComponent,
     AddSchedulingComponent,
     AddHallComponent,
+    UserReservationComponent,
+    ManageComponent,
   ],
   imports: [
     BrowserModule,

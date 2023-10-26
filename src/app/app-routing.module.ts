@@ -7,11 +7,12 @@ import { DetailsComponent } from './details/details.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { AddFilmComponent } from './add-film/add-film.component';
 import { ReservationComponent } from './reservation/reservation.component';
-import { authGuardIsAdmin, authGuardNotLogged } from './auth.guard';
+import { authGuardIsAdmin, authGuardIsLogged, authGuardNotLogged } from './auth.guard';
 import { UserComponent } from './user/user.component';
 import { AddSchedulingComponent } from './add-scheduling/add-scheduling.component';
 import { AddHallComponent } from './add-hall/add-hall.component';
-import { AddComponent } from './add/add.component';
+import { UserReservationComponent } from './user-reservation/user-reservation.component';
+import { ManageComponent } from './manage/manage.component';
 
 const routes: Routes = [
   {
@@ -35,11 +36,6 @@ const routes: Routes = [
 
   },
   {
-    path: 'user',
-    component: UserComponent,
-
-  },
-  {
     path: 'details',
     component: DetailsComponent,
   },
@@ -48,8 +44,8 @@ const routes: Routes = [
     component: CatalogueComponent,
   },
   {
-    path: 'add',
-    component: AddComponent,
+    path: 'manage',
+    component: ManageComponent,
     canActivate:[authGuardIsAdmin]
 
   },
@@ -74,7 +70,20 @@ const routes: Routes = [
   {
     path: 'reservation',
     component: ReservationComponent,
-  }
+    canActivate:[authGuardIsLogged]
+  },
+  {
+    path: 'user-reservation',
+    component: UserReservationComponent,
+    canActivate:[authGuardIsLogged]
+  },
+  {
+    path: 'user',
+    component: UserComponent,
+    canActivate:[authGuardIsLogged]
+
+  },
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

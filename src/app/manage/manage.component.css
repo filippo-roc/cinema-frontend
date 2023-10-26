@@ -1,9 +1,9 @@
-.add-container{
+.manage-container{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.add-container__add{
+.manage-container__manage{
     width: 30rem;
     height: 25rem;
     display: flex;
