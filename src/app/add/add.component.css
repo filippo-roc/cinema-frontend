@@ -1,4 +1,15 @@
 .add-container{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+.add-container__add{
+    width: 30rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--special-color-box);
+    border-radius: 16px;
 }

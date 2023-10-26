@@ -47,7 +47,6 @@
 }
 .hero__cta{
     background: transparent;
-    border: 2px solid var(--special-color);
     cursor: pointer;
     position: relative;
     overflow: hidden;
