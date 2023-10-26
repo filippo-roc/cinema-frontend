@@ -18,7 +18,7 @@ export const authGuardIsAdmin : CanActivateFn = (route, state)=>{
   const userData = localStorage.getItem("userData")
   const router = inject(Router);
   const userObj = JSON.parse(userData);
-  if (!userObj?.isAdmin) {
+  if (userObj?.isAdmin) {
     return true;
   }
 
