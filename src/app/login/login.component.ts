@@ -86,8 +86,9 @@ export class LoginComponent {
       const surname = result.data.surname;
       const email = result.data.email;
       const phoneNumber = result.data.phoneNumber;
+      const isAdmin = result.data.isAdmin;
       // save user data 
-      this.myAuthService.setUserCredentials(name,surname,email,phoneNumber,token);   
+      this.myAuthService.setUserCredentials(name,surname,email,phoneNumber,token, isAdmin);   
       // go to home  
       this.router.navigate(["/home"])
     } catch (err) {

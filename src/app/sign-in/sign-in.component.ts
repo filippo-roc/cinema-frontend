@@ -152,8 +152,9 @@ export class SignInComponent {
       // get the tokem
       console.log(result)
       const token = result.token;
+      const isAdmin = false;
       // save user data
-      this.myAuthService.setUserCredentials(this.credentials.name, this.credentials.surname, this.credentials.email, this.credentials.phoneNumber, token)
+      this.myAuthService.setUserCredentials(this.credentials.name, this.credentials.surname, this.credentials.email, this.credentials.phoneNumber, token,isAdmin)
       // go to home
       this.router.navigate(["/home"])
     } catch (err) {

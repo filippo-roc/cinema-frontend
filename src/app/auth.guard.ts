@@ -12,3 +12,16 @@ export const authGuardNotLogged: CanActivateFn = (route, state) => {
   return false;
 
 };
+
+
+export const authGuardIsAdmin : CanActivateFn = (route, state)=>{
+  const userData = localStorage.getItem("userData")
+  const router = inject(Router);
+  const userObj = JSON.parse(userData);
+  if (!userObj?.isAdmin) {
+    return true;
+  }
+
+  router.navigate(["home"]);
+  return false;
+}

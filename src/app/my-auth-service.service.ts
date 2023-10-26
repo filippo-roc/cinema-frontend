@@ -42,9 +42,9 @@ export class MyAuthService {
     return this.isLoggedIn;
   }
 
-  setUserCredentials(name, surname, email, phoneNumber, token) {
+  setUserCredentials(name, surname, email, phoneNumber, token,isAdmin) {
     // save user data
-    this.userService.setUserCredentials(name,surname,email, phoneNumber, token);
+    this.userService.setUserCredentials(name,surname,email, phoneNumber, token,isAdmin);
 
     // set logged to true 
     this.setIsLogged(true);
@@ -56,7 +56,7 @@ export class MyAuthService {
   private recoverDataFromLocalStorage() {
     const userData: any = JSON.parse(localStorage.getItem("userData"));
     if (userData) {
-      this.setUserCredentials(userData.name, userData.surname, userData.email, userData.phoneNumber, userData.token);;
+      this.setUserCredentials(userData.name, userData.surname, userData.email, userData.phoneNumber, userData.token, userData.isAdmin);;
       this.setIsLogged(true);
     }
   }

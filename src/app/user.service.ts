@@ -10,12 +10,13 @@ export class UserService {
 
   constructor() { }
 
-  setUserCredentials(name,surname, email, phoneNumber, token){
+  setUserCredentials(name,surname, email, phoneNumber, token, isAdmin){
     this.user.name = name;
     this.user.surname = surname;
     this.user.email = email;
     this.user.phoneNumber = phoneNumber;
     this.user.token = token;
+    this.user.isAdmin = isAdmin;
   }
  
 }

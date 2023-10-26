@@ -11,11 +11,13 @@ import { UserService } from '../user.service';
 export class HeaderComponent {
   isLoggedIn: boolean = false;
   userName  = "";
+  isAdmin: boolean = false;
 
   constructor(private myAuthService: MyAuthService, private userService: UserService) {
     this.myAuthService.getIsLoggedIn().subscribe((value) => {
       this.isLoggedIn = value;
       this.userName = userService.user.name;
+      this.isAdmin = userService.user.isAdmin;
       console.log(this.userName)
     })
     

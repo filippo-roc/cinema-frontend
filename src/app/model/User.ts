@@ -5,7 +5,7 @@ export class User {
      phoneNumber = "";
      password = "";
      token : string = "";
-    
+     isAdmin : boolean = false;
 
     constructor(name: string, surname: string, email:string,phoneNumber :string, password:string) {
         this.email = email;
@@ -13,5 +13,5 @@ export class User {
         this.surname = surname;
         this.phoneNumber = phoneNumber;
     }
-    
+
 }
