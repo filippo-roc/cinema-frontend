@@ -150,7 +150,8 @@ export class SignInComponent {
       // request to server
       const result:any = await lastValueFrom(this.myAuthService.signIn(this.credentials));
       // get the tokem
-      const token =result.data.token;
+      console.log(result)
+      const token = result.token;
       // save user data
       this.myAuthService.setUserCredentials(this.credentials.name, this.credentials.surname, this.credentials.email, this.credentials.phoneNumber, token)
       // go to home
