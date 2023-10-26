@@ -7,7 +7,6 @@ import { DetailsComponent } from './details/details.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { AddFilmComponent } from './add-film/add-film.component';
 import { ReservationComponent } from './reservation/reservation.component';
-import { DettaglioFilmComponent } from './dettaglio-film/dettaglio-film.component';
 import { authGuardNotLogged } from './auth.guard';
 import { UserComponent } from './user/user.component';
 import { AddSchedulingComponent } from './add-scheduling/add-scheduling.component';
@@ -67,11 +66,7 @@ const routes: Routes = [
   {
     path: 'reservation',
     component: ReservationComponent,
-  },
-  {
-    path: 'dettaglio-film',
-    component: DettaglioFilmComponent,
-  },
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

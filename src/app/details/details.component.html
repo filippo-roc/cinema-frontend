@@ -1,1 +1,38 @@
-<p>details works!</p>
+<section class="section" id="details-section">
+  <h1 class="film__title">{{ selectedFilm?.name }}</h1>
+
+  <div class="film-details-container">
+    <div class="film-details-image">
+      <img class="film__img" [src]="selectedFilm?.imageUrl" alt="" />
+    </div>
+    <div class="film-details-info">
+      <h3 class="film-detail-title center">TRAMA</h3>
+      <p class="film-detail-content center">{{ selectedFilm?.description }}</p>
+
+      <div class="film-detail-container-container">
+        <div class="film-detail-container">
+          <h5 class="film-detail-title">CATEGORIA</h5>
+          <p class="film-detail-content">
+            {{ selectedFilm?.categoryName }}
+          </p>
+          <h5 class="film-detail-title">CAST</h5>
+          <p class="film-detail-content"> {{ selectedFilm?.actors }}</p>
+        </div>
+        <div class="film-detail-container">
+          <h5 class="film-detail-title">DURATA</h5>
+          <p class="film-detail-content">
+            {{ selectedFilm?.duration }}
+          </p>
+          <h5 class="film-detail-title">ANNO DI USCITA</h5>
+          <p class="film-detail-content">{{ selectedFilm?.year }}</p>
+          <h5 class="film-detail-title">PREZZO</h5>
+          <p class="film-detail-content"> {{ selectedFilm?.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button routerLink="/reservation" class="add-form__btn btn">Prenota</button>
+  </div>
+</section>

@@ -4,11 +4,10 @@
     flex-wrap: wrap;
 }
 .film{
-    width: 25rem;
-    height: 30rem;
+    width: 28rem;
+    height: 34rem;
     margin-top: 2rem;
     border-radius: 8px;
-    cursor: pointer;
     border: 2px solid var(--secondary-color);
     transition: 1s;
 }

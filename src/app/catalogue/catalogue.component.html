@@ -7,7 +7,7 @@
       </p>
 
       <div class="btn-container">
-        <button  routerLink="/dettaglio-film" type="submit" class="add-form__btn btn btn--alternative ">Dettaglio</button>
+        <button  routerLink="/details" type="submit" class="add-form__btn btn btn--alternative" (click) = "filmService.setSelectedFilm(film)">Dettaglio</button>
         <button type="submit" class="add-form__btn btn" routerLink="/reservation">Prenota</button>
       </div>
     </article>

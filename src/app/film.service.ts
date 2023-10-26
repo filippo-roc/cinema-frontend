@@ -10,7 +10,8 @@ import { BehaviorSubject, lastValueFrom } from 'rxjs';
 export class FilmService {
   private apiUrl = "http://localhost:8080/api/v1/";
   
-  selectedFilm: any;
+  private selectedFilm: Film;
+
   films: BehaviorSubject<Film[]> = new BehaviorSubject([]); 
 
    constructor(private http: HttpClient){
@@ -25,7 +26,12 @@ export class FilmService {
 
     }
    }
-
+   setSelectedFilm(selectedFilm){
+    this.selectedFilm = selectedFilm;
+   }
+   getSelectedFilm(){
+    return this.selectedFilm;
+   }
   getFilms() {
     return this.http.get(`${this.apiUrl}films`);
   }

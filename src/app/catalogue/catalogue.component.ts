@@ -9,8 +9,8 @@ import { FilmService } from '../film.service';
 })
 export class CatalogueComponent {
   films: Film[];
-  constructor(private filmService: FilmService) {
-    this.filmService.films.subscribe(value => this.films = value)
+  constructor(public filmService: FilmService) {
+    filmService.films.subscribe(value => this.films = value)
 
   }
 }
