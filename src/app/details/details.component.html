@@ -10,6 +10,7 @@
       <p class="film-detail-content center">{{ selectedFilm?.description }}</p>
 
       <div class="film-detail-container-container">
+        
         <div class="film-detail-container">
           <h5 class="film-detail-title">CATEGORIA</h5>
           <p class="film-detail-content">
@@ -17,14 +18,14 @@
           </p>
           <h5 class="film-detail-title">CAST</h5>
           <p class="film-detail-content"> {{ selectedFilm?.actors }}</p>
+          <h5 class="film-detail-title">ANNO DI USCITA</h5>
+          <p class="film-detail-content">{{ selectedFilm?.year }}</p>
         </div>
         <div class="film-detail-container">
           <h5 class="film-detail-title">DURATA</h5>
           <p class="film-detail-content">
             {{ selectedFilm?.duration }}
           </p>
-          <h5 class="film-detail-title">ANNO DI USCITA</h5>
-          <p class="film-detail-content">{{ selectedFilm?.year }}</p>
           <h5 class="film-detail-title">PREZZO</h5>
           <p class="film-detail-content"> {{ selectedFilm?.price }}</p>
         </div>

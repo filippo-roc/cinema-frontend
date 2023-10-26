@@ -32,7 +32,9 @@ p{
     margin-top: 2rem; 
     width: 100%;
 }
-
+.film-detail-content{
+    margin-bottom: 1rem;
+}
 .film-details-image {
     width: 40rem;
 }
@@ -42,8 +44,8 @@ p{
     
 }
 .film-details-info {
-    flex: 1; 
     margin: 30px;
+    margin-top: 2rem;
 }
 
 .button-container {
@@ -56,6 +58,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2rem;
 }
 .film-detail-container:nth-child(1){
     margin-right: 3rem;
