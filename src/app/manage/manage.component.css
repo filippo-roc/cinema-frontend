@@ -1,6 +1,6 @@
 .manage-container{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 .manage{
@@ -14,9 +14,9 @@
     justify-content: space-evenly;
     background-color: var(--special-color-box);
     margin-bottom: 2rem;
-    margin-right: 5rem;
     cursor: pointer;
     transition: 1s;
+    margin: 2rem;
 }
 .manage:hover{
     transform: scale(1.1);
