@@ -7,12 +7,12 @@
       </p>
 
       <div class="btn-container">
-        <button [routerLink]="['/details', film.filmId]" type="submit" class="add-form__btn btn btn--alternative" (click) = "filmService.setSelectedFilm(film)">Dettaglio</button>
+        <button [routerLink]="['/details', film.filmId]" type="submit" class="add-form__btn btn btn--alternative">Dettaglio</button>
        
-        <div [ngClass]="['display-message',( !isOver[index] && !isLogged) ? 'display-message--disable' : '']" >
+        <div [ngClass]="['display-message', (!isOver[index] && !isLogged) || isLogged ? 'display-message--disable' : '']" >
           <span>Effettua il Login per prenotare</span>
         </div>
-        <button [disabled]="!isLogged" (mouseover) ="showMessage(index)" (mouseout)="hideMessage(index)" [routerLink]="['/reservation', film.filmId]" type="submit" class="add-form__btn btn"  (click) = "filmService.setSelectedFilm(film)">Prenota</button>
+        <button [disabled]="!isLogged" (mouseover) ="showMessage(index)" (mouseout)="hideMessage(index)" [routerLink]="['/reservation', film.filmId]" type="submit" class="add-form__btn btn" >Prenota</button>
       </div>
     </article>
    

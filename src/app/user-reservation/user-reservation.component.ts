@@ -10,7 +10,11 @@ import { UserService } from '../user.service';
 export class UserReservationComponent {
   tickets:any[] = []
   constructor(private ticketService : TicketService, private userService : UserService){}
+  ngOnInit(){
+   this.ticketService.tickets.subscribe(value => this.tickets = value);
+  }
   getAllTickets(){
-    
+
+
   }
 }

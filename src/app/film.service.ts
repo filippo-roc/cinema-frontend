@@ -10,7 +10,7 @@ import { BehaviorSubject, lastValueFrom } from 'rxjs';
 export class FilmService {
 
 
-   selectedFilm: BehaviorSubject<Film> = new BehaviorSubject(null);
+  selectedFilm: BehaviorSubject<Film> = new BehaviorSubject(null);
   private apiUrl = "http://localhost:8080/api/v1/";
 
   films: BehaviorSubject<Film[]> = new BehaviorSubject([]);
@@ -27,13 +27,10 @@ export class FilmService {
 
     }
   }
-  setSelectedFilm(selectedFilm) {
-    this.selectedFilm = selectedFilm;
-  }
 
   async getSelectedFilm(filmId) {
     try {
-      const result: any = lastValueFrom(this.getFilm(filmId));
+      const result: any = await lastValueFrom(this.getFilm(filmId));
       this.selectedFilm.next(result);
     } catch (err) {
       console.log(err.message)
@@ -45,7 +42,7 @@ export class FilmService {
   }
 
   private getFilm(filmId) {
-    return this.http.get(`${this.apiUrl}?filmId=${filmId}`)
+    return this.http.get(`${this.apiUrl}film/${filmId}`)
   }
 
   addFilm(newFilm) {

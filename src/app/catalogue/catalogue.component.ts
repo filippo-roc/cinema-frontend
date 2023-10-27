@@ -21,6 +21,7 @@ export class CatalogueComponent {
       this.isOver = Array(this.films.length).fill(false)
     })
     this.myAuthService.getIsLoggedIn().subscribe(value => this.isLogged = value);
+    console.log(this.isLogged)
   }
   showMessage(index){
     this.isOver[index] = true;
