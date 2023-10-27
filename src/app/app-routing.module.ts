@@ -36,7 +36,7 @@ const routes: Routes = [
 
   },
   {
-    path: 'details',
+    path: 'details/:filmId',
     component: DetailsComponent,
   },
   {

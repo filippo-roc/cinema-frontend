@@ -8,38 +8,50 @@ import { BehaviorSubject, lastValueFrom } from 'rxjs';
   providedIn: 'root',
 })
 export class FilmService {
-  
-  
-  private selectedFilm: Film;
+
+
+   selectedFilm: BehaviorSubject<Film> = new BehaviorSubject(null);
   private apiUrl = "http://localhost:8080/api/v1/";
 
-  films: BehaviorSubject<Film[]> = new BehaviorSubject([]); 
+  films: BehaviorSubject<Film[]> = new BehaviorSubject([]);
 
-   constructor(private http: HttpClient){
-   }
-   
-  async fetchFilms(){
-    try{
-      const result:any = await lastValueFrom(this.getFilms());
+  constructor(private http: HttpClient) {
+  }
+
+  async fetchFilms() {
+    try {
+      const result: any = await lastValueFrom(this.getFilms());
       console.log(result)
       this.films.next(result)
-    }catch(err){
+    } catch (err) {
 
     }
-   }
-   setSelectedFilm(selectedFilm){
+  }
+  setSelectedFilm(selectedFilm) {
     this.selectedFilm = selectedFilm;
-   }
-   getSelectedFilm(){
-    return this.selectedFilm;
-   }
+  }
+
+  async getSelectedFilm(filmId) {
+    try {
+      const result: any = lastValueFrom(this.getFilm(filmId));
+      this.selectedFilm.next(result);
+    } catch (err) {
+      console.log(err.message)
+    }
+  }
+
   getFilms() {
     return this.http.get(`${this.apiUrl}films`);
   }
-  addFilm(newFilm){
+
+  private getFilm(filmId) {
+    return this.http.get(`${this.apiUrl}?filmId=${filmId}`)
+  }
+
+  addFilm(newFilm) {
 
   }
   // Altri metodi per la gestione dei film
 
- 
+
 }

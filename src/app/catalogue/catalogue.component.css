@@ -29,11 +29,29 @@
 .btn-container{
     display: flex;
     justify-content: space-evenly;
+    position: relative;
+    
 }
 
 
+.display-message{
+    background-color: #ff0000e3;
+    position: absolute;
+    right: 16px;
+    position: absolute;
+    bottom: 60px;
+    right: 51px;
+    width: 145px;
+    height: 93px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    transition: 1s;
+}
 
-
-
+.display-message--disable{
+    display: none;
+}
 
 

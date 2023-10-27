@@ -20,7 +20,7 @@
     align-items: center;
 }
 .scheduling{
-    width: 50rem;
+    width: 55rem;
     height: 10rem;
     border: 2px solid var(--special-color);
     border-radius: 8px;
@@ -32,8 +32,14 @@
     overflow: hidden;
 
 }
+.scheduling-info-text{
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
 .scheduling:hover{
     background-color: var(--special-color);
+    transform: scale(1.1);
 }
 .scheduling__img-container{
     height: 100%;
@@ -44,4 +50,30 @@
 .button-container{
     display: flex;
     justify-content: center;
+}
+.scheduling-information{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+.scheduling-information__title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--alternative-color-2);
+}
+.scheduling-information{
+    font-size: 1.4rem;
+}
+.scheduling-information__price{
+    font-size: 1.5rem;
+    color: var(--alternative-color-2);
+    font-weight: bold;
+    margin-right: 1rem;
+}
+.scheduling-error{
+    color: var(--special-color);
+    font-size: 2rem;
+    margin-top: 2rem;
 }

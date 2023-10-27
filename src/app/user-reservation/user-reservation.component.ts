@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TicketService } from '../ticket.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-reservation',
@@ -8,8 +9,8 @@ import { TicketService } from '../ticket.service';
 })
 export class UserReservationComponent {
   tickets:any[] = []
-  constructor(private ticketService : TicketService){}
-  getAllTicketsByEmail(){
+  constructor(private ticketService : TicketService, private userService : UserService){}
+  getAllTickets(){
     
   }
 }
