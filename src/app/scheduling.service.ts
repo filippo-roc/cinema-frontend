@@ -17,7 +17,6 @@ export class SchedulingService {
 
  async fetchSchedulingByFilmId(filmId){
      try{
-      console.log("URL", `${this.apiUrl}schedulings?filmId=${filmId}`)
       const result:any = await lastValueFrom(this.getSchedulings(filmId));
       console.log(result)
       this.schedulings.next(result);
