@@ -33,7 +33,7 @@ export class AddFilmComponent {
 
   getCategories() {
     this.http.get<any>('http://localhost:8080/api/v1/categories').subscribe(data => {
-      
+    
       this.categories = data; 
     });
   }

@@ -150,11 +150,10 @@ export class SignInComponent {
       // request to server
       const result:any = await lastValueFrom(this.myAuthService.signIn(this.credentials));
       // get the tokem
-      console.log(result)
       const token = result.token;
       const isAdmin = false;
       // save user data
-      this.myAuthService.setUserCredentials(this.credentials.name, this.credentials.surname, this.credentials.email, this.credentials.phoneNumber, token,isAdmin)
+      this.myAuthService.setUserCredentials(this.credentials.name, this.credentials.surname, this.credentials.email, this.credentials.phoneNumber, token, isAdmin)
       // go to home
       this.router.navigate(["/home"])
     } catch (err) {

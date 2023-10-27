@@ -1,19 +1,24 @@
-<section class="section manage">
+<section class="section">
     <div class="manage-container">
-      <div class="manage-container__manage">
-        <h1>AGGIUNGI FILM</h1>
-        <button class="btn btn--alternative-2" routerLink="/add-film" router>Aggiungi</button>
-      </div>
+      
+      <div routerLink="/add-film" class="manage manage-add">Aggiungi Film</div>
+ 
+      <div routerLink="/add-scheduling" class="manage manage-add"> Aggiungi Programmazione </div>
   
-      <div class="manage-container__manage"> 
-        <h1>AGGIUNGI PROGRAMMAZIONE</h1>
-        <button class="btn btn--alternative-2" routerLink="/add-scheduling">Aggiungi</button>
-      </div>
+      <div routerLink="/add-hall" class="manage manage-add">Aggiungi Sala</div>
+
+      <div  class="manage manage-update">Modifica Film</div>
+ 
+      <div class="manage manage-update"> Modifica Programmazioni </div>
   
-      <div class="manage-container__manage">
-        <h1>AGGIUNGI SALA</h1>
-        <button class="btn btn--alternative-2" routerLink="/add-hall">Aggiungi</button>
-      </div>
+      <div  class="manage manage-update">Modifica Sale</div>
+
+
+      <div  class="manage manage-delete">Elimina Film</div>
+ 
+      <div  class="manage manage-delete"> Elimina Programmazioni </div>
+  
+      <div  class="manage manage-delete">Elimina Sale</div>
     </div>
   </section>
   

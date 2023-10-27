@@ -9,7 +9,7 @@
       <li *ngIf="!isLoggedIn" class="menu__item"><a routerLink="/login" routerLinkActive="active">Accedi</a></li>
       <li *ngIf="!isLoggedIn" class="menu__item"><a routerLink="/signin" routerLinkActive="active">Iscriviti</a></li>
       <li *ngIf="isLoggedIn" class="menu__item"><a routerLink="/user" routerLinkActive="active">{{userName}}</a></li>
-      <li *ngIf="isLoggedIn && !isAdmin" class="menu__item"><a routerLink="/user" routerLinkActive="active">Prenotazioni</a></li>
+      <li *ngIf="isLoggedIn && !isAdmin" class="menu__item"><a routerLink="/user-reservation" routerLinkActive="active">Prenotazioni</a></li>
 
 
       <li *ngIf="isLoggedIn && isAdmin" class="menu__item"><a routerLink="/manage" routerLinkActive="active">Gestisci</a></li>

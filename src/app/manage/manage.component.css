@@ -1,15 +1,33 @@
 .manage-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
-.manage-container__manage{
-    width: 30rem;
-    height: 25rem;
+.manage{
+    width: 13rem;
+    height: 6rem;
+    font-size: 1.2rem;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     background-color: var(--special-color-box);
-    border-radius: 16px;
+    margin-bottom: 2rem;
+    margin-right: 5rem;
+    cursor: pointer;
+    transition: 1s;
 }
+.manage:hover{
+    transform: scale(1.1);
+}
+.manage-add{
+    background-color: green;
+}
+.manage-update{
+    background-color: orange;
+}
+.manage-delete{
+    background-color: red;
+}
+
