@@ -8,7 +8,7 @@ import { BehaviorSubject, lastValueFrom } from 'rxjs';
   providedIn: 'root',
 })
 export class FilmService {
-  private apiUrl = "http://localhost:8080/api/v1/";
+  
   
   private selectedFilm: Film;
 

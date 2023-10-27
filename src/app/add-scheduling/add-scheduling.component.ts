@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+// add-scheduling.component.ts
+import { Component, OnInit } from '@angular/core';
+
+import { FilmService } from '../film.service';
 
 @Component({
   selector: 'app-add-scheduling',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-scheduling.component.css']
 })
 export class AddSchedulingComponent {
+  films: any[] = [];
+  selectedFilmId: string = '';
+  hallId: string = '';
+  data: string = '';
+  ora: string = '';
 
+  
 }
