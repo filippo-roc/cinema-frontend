@@ -1,20 +1,25 @@
 
 
 
-<div class="section" id="film-section">
-    <h1 class="accedi-title">Prenota</h1>
-    <div class="film-details-container">
-        
-        <div class="scheduling">
-        </div>
+<div class="section" id="scheduling-section">
+    <h1 class="scheduling-title">Prenota</h1>
+    <p class="prenotation-text">Prenota il tuo biglietto. Alla decima prenotazione, il successivo verrà offerto da noi</p>
 
-        <div class="film-details-info">
-            <div class="button-container">
-                <a routerLink="/reservation"><button class="add-form__btn btn">Prenota</button></a>
-                <a routerLink="/catalogue"><button class="add-form__btn btn">Torna indietro</button></a>
+    <div class="schedulings">
+        
+        <article class = "scheduling" *ngFor="let scheduling of schedulings" (click) ="prenotation(scheduling)" >
+            <div class="scheduling__img-container">
+                <img class="scheduling__img" [src]="scheduling.filmDTO.imageUrl" alt="">
             </div>
-            <p class="prenotation-text">Prenota il tuo biglietto. Alla decima prenotazione, il successivo verrà offerto da noi</p>
-        </div>
+            <div>
+                <p>{{scheduling.hallDTO.name}}</p>
+                <p>{{scheduling.startTime}}</p>
+            </div>
+            <div>
+                <p> €{{scheduling.filmDTO.price + scheduling.hallDTO.price}}</p>
+            </div>
+          </article>
+
     </div>
 </div>
 

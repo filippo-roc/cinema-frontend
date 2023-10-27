@@ -1,4 +1,5 @@
-export class Film {   
+export class Film {  
+    filmId : Number; 
     name:string = "";
     description:string = "";
 
@@ -19,6 +20,8 @@ export class Film {
     this.year= year;
     this.price= price;
     this.categoryName= categoryName;
-
+   }
+   setId(filmId){
+    this.filmId = filmId;
    }
 }

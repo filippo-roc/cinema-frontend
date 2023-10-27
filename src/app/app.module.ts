@@ -18,6 +18,7 @@ import { AddSchedulingComponent } from './add-scheduling/add-scheduling.componen
 import { AddHallComponent } from './add-hall/add-hall.component';
 import { UserReservationComponent } from './user-reservation/user-reservation.component';
 import { ManageComponent } from './manage/manage.component';
+import { ReservationComponent } from './reservation/reservation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { ManageComponent } from './manage/manage.component';
     AddHallComponent,
     UserReservationComponent,
     ManageComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,

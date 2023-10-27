@@ -1,101 +1,47 @@
+.scheduling-section{
 
-.accedi-title{
-    text-transform: uppercase;
+}
+.scheduling-title{
+    text-align: center;
+    margin-bottom: 2rem;
     color: var(--alternative-color-2);
-    font-size: 2rem;
+    font-size: 3rem;
 }
-.add-form__btn{
-    align-self: center;
-    margin-right: 8px;
-    margin-bottom: 30px;
-}
-.add-form__input{
-    width: 100%;
-}
-.add-form__label{
+.prenotation-text{
+    font-size: 1.5rem;
     text-align: center;
-    align-self: center;
-    font-size: 18px;
+    margin-bottom: 2rem;
 }
-#film-section{
+
+.schedulings{
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
     flex-direction: column;
-    flex-wrap: wrap;
-}
-.film{
-    width: 25rem;
-    height: 25rem;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 2px solid var(--special-color);
-    transition: 1s;
-}
-.film:hover{
-    background-color: var(--special-color);
-}
-.film__title{
-    padding: 16px;
-    text-align: center;
-}
-.film__img{
-    width: 100%;
-    height: 400px;
-    border-radius: 8px;
-    
-}
-.film__description{
-    text-align: center;
-    padding: 16px;
-}
-.add-form__btn{
-    align-self: center;
-    margin-right: 8px;
-    margin-bottom: 30px;
-    margin-top: 30px;
-}
-
-
-
-
-.film-container {
-    text-align: center; 
-}
-
-.section {
-    display: flex;
-    justify-content: center; 
     align-items: center;
 }
-
-.film-details-container {
+.scheduling{
+    width: 50rem;
+    height: 10rem;
+    border: 2px solid var(--special-color);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: 1s;
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-}
+    justify-content: space-between;
+    overflow: hidden;
 
-.film-details-image {
-    flex: 1; 
 }
-
-.film-details-info {
-    flex: 1; 
-    margin: 30px;
+.scheduling:hover{
+    background-color: var(--special-color);
 }
-
-.button-container {
+.scheduling__img-container{
+    height: 100%;
+}
+.scheduling__img{
+    height: 100%;
+}
+.button-container{
     display: flex;
     justify-content: center;
-    margin-top: 20px; 
 }
-.colore-option{
-    color: black;
-}
-
-
-.prenotation-text{
-    text-align: center;
-}
-
-
-

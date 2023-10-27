@@ -68,7 +68,7 @@ const routes: Routes = [
 
   },
   {
-    path: 'reservation',
+    path: 'reservation/:filmId',
     component: ReservationComponent  },
   {
     path: 'user-reservation',

@@ -10,5 +10,6 @@ export class AppComponent {
   title = 'PROGETTO-CINEMA-ANGULAR';
   constructor(filmService : FilmService){
     filmService.fetchFilms();
+    console.log(filmService.films)
   }
 }
