@@ -68,7 +68,26 @@ button{
   transition:  1s;
   z-index: 2;
 }
-
+.btn:disabled{
+  background-color: gray;
+  border: none;
+  cursor:not-allowed;
+}
+.btn:disabled:hover{
+  background-color: gray;
+  border: none;
+  cursor:not-allowed;
+}
+.btn:disabled::after{
+  background-color: gray;
+  border: none;
+  cursor:not-allowed;
+}
+.btn:disabled::before{
+  background-color: gray;
+  border: none;
+  cursor:not-allowed;
+}
 .btn--alternative{
   border-color: var(--alternative-color-2);
 }
