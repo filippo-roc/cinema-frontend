@@ -77,3 +77,12 @@
     font-size: 2rem;
     margin-top: 2rem;
 }
+.is-selected{
+    position: absolute;
+    z-index: 3;
+    background-color: var(--special-color);
+    bottom: 10%;
+}
+.is-selected:hover{
+    transform: none;
+}

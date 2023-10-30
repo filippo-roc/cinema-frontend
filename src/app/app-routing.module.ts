@@ -7,7 +7,7 @@ import { DetailsComponent } from './details/details.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { AddFilmComponent } from './add-film/add-film.component';
 import { ReservationComponent } from './reservation/reservation.component';
-import { authGuardIsAdmin, authGuardIsLogged, authGuardNotLogged } from './auth.guard';
+import { authGuardIsAdmin, authGuardIsLogged, authGuardNotLogged, confirmExitGuard } from './auth.guard';
 import { UserComponent } from './user/user.component';
 import { AddSchedulingComponent } from './add-scheduling/add-scheduling.component';
 import { AddHallComponent } from './add-hall/add-hall.component';
@@ -69,7 +69,9 @@ const routes: Routes = [
   },
   {
     path: 'reservation/:filmId',
-    component: ReservationComponent  },
+    component: ReservationComponent ,
+    canActivate:[authGuardIsLogged],
+  } ,
   {
     path: 'user-reservation',
     component: UserReservationComponent,

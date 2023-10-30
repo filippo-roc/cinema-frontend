@@ -1,0 +1,8 @@
+<div class="modal">
+  <p class="modal__message">{{ message }}</p>
+  <div class="modal__btn-container">
+    <button class="btn" (click) = "emitEvent(false)">Annulla</button>
+    <button class="btn" (click) = "emitEvent(true)">Prenota</button>
+  </div>
+</div>
+<div class="overlay"></div>

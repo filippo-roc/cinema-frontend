@@ -7,7 +7,7 @@
     <p class="scheduling-info-text">(il prezzo del biglietto dipende anche dalla qualità della sala)</p>
     <div class="schedulings">
         
-        <article class = "scheduling" *ngFor="let scheduling of schedulings" (click) ="prenotation(scheduling)" >
+        <article [ngClass]="['scheduling',isSelected[index] ? 'is-selected': '' ]" class = "scheduling" *ngFor="let scheduling of schedulings; let index = index" (click) ="clickHandler(index, scheduling)" >
             <div class="scheduling__img-container">
                 <img class="scheduling__img" [src]="scheduling.filmDTO.imageUrl" alt="">
             </div>
@@ -19,12 +19,14 @@
             <div class="scheduling-information">
                 <p  class="scheduling-information__price"> €{{scheduling.filmDTO.price + scheduling.hallDTO.price}}</p>
             </div>
+
           </article>
           <div *ngIf="schedulings.length===0">
             <h1 class="scheduling-error">Oh no, al momento non è disponibile nessuna programmazione</h1>
           </div>
 
     </div>
+    <app-modal-display *ngIf="activateModal" message = "Sei sicuro di voler prenotare?" (confirm) = "prenotation($event)"></app-modal-display>
 </div>
 
 

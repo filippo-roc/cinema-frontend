@@ -1,5 +1,6 @@
 import { inject } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
+import { CanActivateFn, CanDeactivateFn, Router } from '@angular/router';
+import { Injectable } from '@angular/core';
 
 export const authGuardNotLogged: CanActivateFn = (route, state) => {
   const userData = localStorage.getItem("userData")
@@ -25,6 +26,13 @@ export const authGuardIsLogged: CanActivateFn = (route, state) => {
 
 };
 
+export const confirmExitGuard: CanDeactivateFn<unknown> = (component,currentRoute, currentState, nextState) => {
+  console.log(component);
+  console.log(currentRoute);
+  console.log(currentState);
+  console.log(nextState)
+  return true;
+}
 
 export const authGuardIsAdmin : CanActivateFn = (route, state)=>{
   const userData = localStorage.getItem("userData")

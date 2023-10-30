@@ -9,7 +9,7 @@ import { BehaviorSubject, lastValueFrom } from 'rxjs';
 export class TicketService {
   private apiUrl = "http://localhost:8080/api/v1/";
   tickets: BehaviorSubject<any[]> = new BehaviorSubject([]); 
-
+  addedTicket : BehaviorSubject<boolean> = new BehaviorSubject(false);
   constructor(private http: HttpClient) {
     
    }
@@ -24,6 +24,7 @@ export class TicketService {
     }
    }
   createTicket(email, schedulingId, token){
+    this.addedTicket.next(true)
     return this.http.post(`${this.apiUrl}newTicket`, {email, schedulingId, token});
   }
 
