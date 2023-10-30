@@ -1,0 +1,9 @@
+<div>
+    <h2>Seleziona un film da eliminare:</h2>
+    
+    <select class="film-list" (change)="getFilmId($event)">
+        <option value="" disabled selected>Seleziona un film</option>
+        <option class="colore-testo" *ngFor="let film of films" [value]="film.filmId">{{ film.name }}</option>
+    </select>
+    <button class="add-form__btn btn" (click)="deleteFilm()">Elimina</button>
+</div>

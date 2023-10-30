@@ -6,6 +6,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { DetailsComponent } from './details/details.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { AddFilmComponent } from './add-film/add-film.component';
+
 import { ReservationComponent } from './reservation/reservation.component';
 import { authGuardIsAdmin, authGuardIsLogged, authGuardNotLogged } from './auth.guard';
 import { UserComponent } from './user/user.component';
@@ -13,6 +14,7 @@ import { AddSchedulingComponent } from './add-scheduling/add-scheduling.componen
 import { AddHallComponent } from './add-hall/add-hall.component';
 import { UserReservationComponent } from './user-reservation/user-reservation.component';
 import { ManageComponent } from './manage/manage.component';
+import { DeleteFilmComponent } from './delete-film/delete-film.component';
 
 const routes: Routes = [
   {
@@ -52,6 +54,12 @@ const routes: Routes = [
   {
     path: 'add-film',
     component: AddFilmComponent,
+    canActivate:[authGuardIsAdmin]
+
+  },
+  {
+    path: 'delete-film',
+    component: DeleteFilmComponent,
     canActivate:[authGuardIsAdmin]
 
   },

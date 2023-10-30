@@ -8,6 +8,7 @@ import { BehaviorSubject, lastValueFrom } from 'rxjs';
   providedIn: 'root',
 })
 export class FilmService {
+  
 
 
   selectedFilm: BehaviorSubject<Film> = new BehaviorSubject(null);
@@ -47,6 +48,10 @@ export class FilmService {
 
   addFilm(newFilm) {
 
+  }
+
+  deleteFilm(filmId: string) {
+    return this.http.delete(`${this.apiUrl}deleteFilm/{filmId}`);
   }
   // Altri metodi per la gestione dei film
 

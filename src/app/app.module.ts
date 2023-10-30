@@ -19,6 +19,7 @@ import { AddHallComponent } from './add-hall/add-hall.component';
 import { UserReservationComponent } from './user-reservation/user-reservation.component';
 import { ManageComponent } from './manage/manage.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { DeleteFilmComponent } from './delete-film/delete-film.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { ReservationComponent } from './reservation/reservation.component';
     AddHallComponent,
     UserReservationComponent,
     ManageComponent,
-    ReservationComponent
+    ReservationComponent,
+    DeleteFilmComponent
   ],
   imports: [
     BrowserModule,
