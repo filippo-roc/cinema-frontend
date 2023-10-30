@@ -17,6 +17,7 @@ export class TicketService {
    async fetchTickets(token){
     try{
       const result:any = await lastValueFrom(this.getTickets(token));
+      console.log("biglietti",result)
       this.tickets.next(result)
     }catch(err){
       console.log(err);
@@ -27,6 +28,6 @@ export class TicketService {
   }
 
   getTickets(token){
-    return this.http.get(`${this.apiUrl}:token=${token}`)
+    return this.http.get(`${this.apiUrl}tickets?token=${token}`)
   }
 }
