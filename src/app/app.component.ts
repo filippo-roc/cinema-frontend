@@ -21,5 +21,12 @@ export class AppComponent {
     this.myAuthService.getIsLoggedIn().subscribe((value) =>{
       if(value) this.ticketsService.fetchTickets(this.userService.user.token)
     })
+
+    this.ticketsService.addedTicket.subscribe(value =>{
+      if(value) {
+        this.ticketsService.fetchTickets(this.userService.user.token)
+        this.ticketsService.addedTicket.next(false);
+      }
+    })
   }
 }

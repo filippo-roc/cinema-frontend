@@ -1,8 +1,78 @@
 <section id="user-section">
-    <h1>LE TUE PRENOTAZIONI</h1>
-    <div>
-        <article **ngFor="let ticket of tickets">
+  <div class="prenotations">
+    <h1 class="title">LE TUE PRENOTAZIONI</h1>
+    <p class="subtitle">Controlla le tue prenotazioni ancora attive</p>
+    <article *ngFor="let ticket of tickets" class="prenotation">
+      <div class="prenotation__img-container">
+        <img
+          class="prenotation__img"
+          [src]="ticket.schedulingDTO.filmDTO.imageUrl"
+          alt=""
+        />
+      </div>
+      <div class="prenotation__content">
+        <h2 class="prenotation__title">
+          {{ ticket.schedulingDTO.filmDTO.name }}
+        </h2>
+        <p class="prenotation__description">{{ticket.schedulingDTO.filmDTO.description}}</p>
+        <div class="prenotation__info-container">
+          <div class="prenotation__info">
+            <p class="prenotation__info__description">DATA E ORA: </p>
+            <p class="prenotation__info__content">{{ ticket.schedulingDTO.startTime }}</p>
+          </div>
+          <div class="prenotation__info">
+            <p class="prenotation__info__description">SALA: </p>
+            <p class="prenotation__info__content">{{ ticket.schedulingDTO.hallDTO.name }}</p>
+          </div>
 
-        </article>
-    </div>
+
+          <div class="prenotation__info">
+            <p class="prenotation__info__description">PAGATO: </p>
+            <p class="prenotation__info__content">€{{
+              ticket.schedulingDTO.hallDTO.price +
+                ticket.schedulingDTO.filmDTO.price
+            }}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <h1 class="title">LE TUE PRENOTAZIONI PASSATE</h1>
+    <p class="subtitle">Controlla le tue prenotazioni passate</p>
+
+    <article *ngFor="let ticket of pastTickets" class="prenotation">
+      <div class="prenotation__img-container">
+        <img
+          class="prenotation__img"
+          [src]="ticket.schedulingDTO.filmDTO.imageUrl"
+          alt=""
+        />
+      </div>
+      <div class="prenotation__content">
+        <h2 class="prenotation__title">
+          {{ ticket.schedulingDTO.filmDTO.name }}
+        </h2>
+        <p class="prenotation__description">{{ticket.schedulingDTO.filmDTO.description}}</p>
+        <div class="prenotation__info-container">
+          <div class="prenotation__info">
+            <p class="prenotation__info__description">DATA E ORA: </p>
+            <p class="prenotation__info__content">{{ ticket.schedulingDTO.startTime }}</p>
+          </div>
+          <div class="prenotation__info">
+            <p class="prenotation__info__description">SALA: </p>
+            <p class="prenotation__info__content">{{ ticket.schedulingDTO.hallDTO.name }}</p>
+          </div>
+
+
+          <div class="prenotation__info">
+            <p class="prenotation__info__description">PAGATO: </p>
+            <p class="prenotation__info__content">€{{
+              ticket.schedulingDTO.hallDTO.price +
+                ticket.schedulingDTO.filmDTO.price
+            }}</p>
+          </div>
+        </div>
+      </div>
+    <div class="overlay"></div>
+    </article>
+  </div>
 </section>

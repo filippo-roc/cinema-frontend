@@ -19,7 +19,11 @@ import { AddHallComponent } from './add-hall/add-hall.component';
 import { UserReservationComponent } from './user-reservation/user-reservation.component';
 import { ManageComponent } from './manage/manage.component';
 import { ReservationComponent } from './reservation/reservation.component';
+<<<<<<< HEAD
 import { DeleteFilmComponent } from './delete-film/delete-film.component';
+=======
+import { ModalDisplayComponent } from './modal-display/modal-display.component';
+>>>>>>> eaf271d4d65b3662a31cec1944b681e89c51284b
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +40,11 @@ import { DeleteFilmComponent } from './delete-film/delete-film.component';
     UserReservationComponent,
     ManageComponent,
     ReservationComponent,
+<<<<<<< HEAD
     DeleteFilmComponent
+=======
+    ModalDisplayComponent
+>>>>>>> eaf271d4d65b3662a31cec1944b681e89c51284b
   ],
   imports: [
     BrowserModule,
