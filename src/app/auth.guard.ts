@@ -45,3 +45,15 @@ export const authGuardIsAdmin : CanActivateFn = (route, state)=>{
   router.navigate(["home"]);
   return false;
 }
+
+export const authGuardIsNotAdmin : CanActivateFn = (route, state)=>{
+  const userData = localStorage.getItem("userData")
+  const router = inject(Router);
+  const userObj = JSON.parse(userData);
+  if (!userObj?.isAdmin) {
+    return true;
+  }
+
+  router.navigate(["home"]);
+  return false;
+}
