@@ -1,0 +1,9 @@
+<div >
+    <h2>Seleziona una programmazione da eliminare:</h2>
+    <select class="scheduling-list" (change)="getSchedulingId($event)">
+      <option value="" disabled selected>Seleziona una programmazione</option>
+      <option class="colore-testo" *ngFor="let scheduling of schedulings" [value]="scheduling.schedulingId">{{ scheduling.filmDTO.name }}</option>
+    </select>
+    <button class="add-form__btn btn"  (click)="deleteScheduling()">Elimina Programmazione</button>
+  </div>
+  

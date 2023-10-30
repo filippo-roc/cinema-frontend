@@ -15,7 +15,7 @@ export class DeleteFilmComponent implements OnInit {
   
 
   constructor(private http: HttpClient) {
-    // Recupera i film dal backend e assegnali alla variabile films
+    
     this.http.get<any>('http://localhost:8080/api/v1/films').subscribe((data) => {
       this.films = data;
     });
@@ -47,6 +47,7 @@ export class DeleteFilmComponent implements OnInit {
 
   getFilmId(event: Event): void {
     const selectedFilmId = (event.target as HTMLSelectElement).value;
+   
     this.selectedFilmId = selectedFilmId ? Number(selectedFilmId) : undefined;
   }
 }
