@@ -1,12 +1,17 @@
+.manage-section{
+    display: flex;
+}
 .manage-container{
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
 }
 .manage{
-    width: 13rem;
-    height: 6rem;
-    font-size: 1.2rem;
+    width: 29rem;
+    height: 5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -15,19 +20,41 @@
     background-color: var(--special-color-box);
     margin-bottom: 2rem;
     cursor: pointer;
-    transition: 1s;
-    margin: 2rem;
+    transition: 0.6s;
+    margin: 0rem 1.5rem 2.5rem 0;
+    border-radius: 0 10px 10px 0;
 }
 .manage:hover{
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 .manage-add{
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.5);
 }
-.manage-update{
-    background-color: orange;
-}
-.manage-delete{
-    background-color: red;
+.manage-add:hover{
+    background-color: rgb(0, 128, 0);
 }
 
+
+.manage-update{
+    background-color: rgba(255, 166, 0, 0.500);
+}
+.manage-update:hover{
+    background-color: orange;
+}
+
+.manage-delete{
+    background-color: rgba(255, 0, 0, 0.500);
+}
+.manage-delete:hover{
+    background-color: red;
+}
+.manage-svg-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    max-height: 100vh;
+}
+.manage-svg{
+
+}

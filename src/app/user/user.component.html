@@ -7,11 +7,22 @@
             
             <div class=" user-details-container">
                 <h1 >SCHEDA UTENTE</h1>
-                <p>Nome: {{ user.name }}</p>
-                <p>Cognome: {{ user.surname }}</p>
-                <p>Email: {{ user.email }}</p>
-                <p>Numero di telefono: {{ user.phoneNumber }}</p>
-                <button type="submit" class="add-form__btn btn " routerLink="/catalogue" >Torna al catalogo</button>
+                <div class="user__detail">
+                    <p class="user__detail__property-name">Nome: </p>
+                    <p>{{ user.name }}</p>
+                </div>
+                <div class="user__detail">
+                    <p class="user__detail__property-name">Cognome: </p>
+                    <p>{{ user.surname }}</p>
+                </div>
+                <div class="user__detail">
+                    <p class="user__detail__property-name">Email: </p>
+                    <p>{{user.email}}</p>
+                </div>
+                <div class="user__detail">
+                    <p class="user__detail__property-name">Numero di telefono: </p>
+                    <p>{{ user.phoneNumber }}</p>
+                </div>
                 
               </div>
               

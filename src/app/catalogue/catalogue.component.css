@@ -8,8 +8,8 @@
     height: 34rem;
     margin-top: 2rem;
     border-radius: 8px;
-    border: 2px solid var(--secondary-color);
-    transition: 1s;
+    border: 3px solid var(--secondary-color);
+    transition: 0.5s;
 }
 .film:hover{
     border-color: var(--special-color);
