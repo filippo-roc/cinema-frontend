@@ -26,7 +26,6 @@ export class HeaderComponent {
  async onLogout() {
     try { 
       const result = await lastValueFrom(this.myAuthService.logout());
-
      } catch (err){
       console.log(err)
     }

@@ -28,7 +28,6 @@ export class AddFilmComponent {
     const nuovoFilm: Film = new Film(this.title,this.description,this.imageURL, this.actors, this.duration, this.year, this.price, this.category); 
     this.filmService.addFilm(nuovoFilm); 
     this.router.navigate(["/catalogue"])
-
   }
 
   getCategories() {
